@@ -18,6 +18,7 @@ const Houses = () => {
 
 			<div className="flex flex-row pl-5">
 				<div className="flex flex-col">
+					{/* change this to a ul and li elements */}
 					{housingData.map((house) => {
 						return (
 							<div>

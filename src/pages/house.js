@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 import { housingData } from '../utils/housingData';
 import NotFoundPage from './notFound';
 
@@ -10,7 +9,7 @@ const House = () => {
 	// 	<Link to="houses/1000000" />;
 	// } else {
 	return (
-		<div>
+		<div class="prose ">
 			{/* <h1>House #: {params.houseId}</h1>
 			<div>
 				<NavLink to="/houses">Back to houses</NavLink>
@@ -20,11 +19,11 @@ const House = () => {
 				alt={`house #${params.houseId}`}
 				className="w-96 mt-2 mb-2"
 			/>
-			<p className="mb-2">
+			<p className="">
 				Address: <a href={currHouse.photoUrl}>{currHouse.address}</a>
 			</p>
 			<hr />
-			<p className="mt-2">Price: {currHouse.price}</p>
+			<p className="">Price: {currHouse.price}</p>
 			<p>Beds: {currHouse.bedrooms}</p>
 			<p>Baths: {currHouse.bathrooms}</p>
 			<p>Sqft: {currHouse.squareFeet}</p>

@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
-import CounterComponent from './test';
 
+import NotFoundPage from './pages/notFound';
 import HomePage from './pages/homepage';
 import Houses from './pages/houses';
-import App from './App';
-import NotFoundPage from './pages/notFound';
 import House from './pages/house';
+import Login from './Login';
+import FAQ from './faq';
 
 const router = createBrowserRouter([
 	{
@@ -29,13 +29,21 @@ const router = createBrowserRouter([
 			},
 		],
 	},
-	{},
+	{
+		path: '/login',
+		element: <Login />,
+		errorElement: <NotFoundPage />,
+	},
+	{
+		path: '/faq',
+		element: <FAQ />,
+		errorElement: <NotFoundPage />,
+	},
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		{/* <RouterProvider router={router} /> */}
-		<CounterComponent />
+		<RouterProvider router={router} />
 	</React.StrictMode>
 );

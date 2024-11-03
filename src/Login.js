@@ -1,9 +1,9 @@
 import { useState, useEffect, useMemo } from 'react';
 import Loading from './loading.js';
-import FAQ from './faq.js';
 import { housingData, filterByName } from './data.js';
+import { NavLink } from 'react-router-dom';
 
-const App = () => {
+const Login = () => {
 	// const [fname, setFname] = useState('');
 	// const [lname, setLname] = useState('');
 	// const [email, setEmail] = useState('');
@@ -46,10 +46,10 @@ const App = () => {
 	// };
 
 	return (
-		<>
+		<div>
 			{loading && <Loading />}
 			{!loading && !isSent && (
-				<div>
+				<div className="prose">
 					<h1>Sign Up</h1>
 					<form onSubmit={handleSubmit}>
 						<h3>First Name</h3>
@@ -118,15 +118,17 @@ const App = () => {
 							Sign up
 						</button>
 						<div>
-							<a href="account-url">
+							<NavLink to="/houses">
 								<span
 									style={{ color: 'grey', 'text-decoration-color': 'grey' }}
 								>
 									Log in to your account
 								</span>
-							</a>
+							</NavLink>
 						</div>
-						<FAQ />
+						<NavLink to="/faq" className="underline">
+							Click here for FAQs
+						</NavLink>
 						{/* <button onClick={handleClick}>FAQs</button> */}
 					</form>
 				</div>
@@ -137,8 +139,8 @@ const App = () => {
 					looking forward to serving your needs in the home-buying process!
 				</h1>
 			)}
-		</>
+		</div>
 	);
 };
 
-export default App;
+export default Login;
